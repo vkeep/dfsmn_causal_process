@@ -1,0 +1,13 @@
+{
+  "framework": "pytorch",
+  "task": "acoustic-noise-suppression",
+  "framework": "pytorch",
+  "pipeline": {
+     "type": "speech_dfsmn_ans_psm_48k_causal"
+  },
+  "model": {
+    "type": "speech_dfsmn_ans",
+    "fsmn_depth": 9,
+    "lorder": 20
+  }
+}
