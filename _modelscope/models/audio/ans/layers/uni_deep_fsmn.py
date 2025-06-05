@@ -89,9 +89,9 @@ class UniDeepFsmn(LayerBase):
         # x: batch (b) x channel (c) x sequence(T) x feature (h)
         x_per = x.permute(0, 3, 2, 1)
         # x_per: batch (b) x feature (h) x sequence(T) x channel (c)
-        #y = F.pad(x_per, [0, 0, self.lorder - 1, 0])
-        conv_out = self.conv1(x_per)
-        #conv_out = self.conv1(y)
+        y = F.pad(x_per, [0, 0, self.lorder - 1, 0])
+        #conv_out = self.conv1(x_per)
+        conv_out = self.conv1(y)
         out = x_per + conv_out
         #print("#####use conv in uni deep fsmn forward")
         out1 = out.permute(0, 3, 2, 1)
